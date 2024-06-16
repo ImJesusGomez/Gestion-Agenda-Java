@@ -1,1 +1,21 @@
+Proyecto Java con arreglos: Gestión de una agenda de contactos
+Objetivo: El objetivo de este proyecto es crear una agenda de contactos simple que permita al usuario:
 
+- Añadir contactos
+- Ver la lista de contactos
+- Buscar contactos por nombre
+- Editar contactos
+- Eliminar contactos
+Para lograr este objetivo, se utilizarán arreglos para almacenar los datos de los contactos.
+
+Descripción:
+
+Este proyecto te ayudará a comprender los siguientes conceptos de arreglos en Java:
+
+- Declaración de arreglos
+- Inicialización de arreglos
+- Acceso a elementos de un arreglo
+- Recorrido de arreglos
+- Búsqueda en arreglos
+- Modificación de elementos de un arreglo
+- Eliminación de elementos de un arreglo

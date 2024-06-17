@@ -11,7 +11,7 @@ public class ArreglosProyecto {
         BufferedReader teclado = new BufferedReader(new InputStreamReader(System.in));
         // Declaramos el arreglo que usaremos
         String[] listaContactos = new String[10];
-        int contactosRegistrados = 0, cantContactos = 0;
+        int contactosRegistrados = 0, cantContactos;
 
         // Usamos un ciclo while que sea el menú de acciones y termine hasta que el usuario desea salir
         int opcion = 0;
@@ -36,6 +36,7 @@ public class ArreglosProyecto {
                             contactosRegistrados += 1;
                         }
                     }
+                    System.out.println();
                     break;
                 // Ver Contactos
                 case 2:
@@ -100,7 +101,7 @@ public class ArreglosProyecto {
                     contactoEncontrado = false;
                     int posicionContacto = 0;
                     total = contactosRegistrados;
-                    
+
                     for (int i = 0; i < total; i++) {
                         String[] partes = listaContactos[i].split(" ");
 
@@ -124,6 +125,45 @@ public class ArreglosProyecto {
 
                     System.out.println();
 
+                    break;
+                // Eliminar Contacto
+                case 5:
+                    System.out.println("Introduce el nombre: ");
+                    nombreContacto = teclado.readLine();
+                    contactoEncontrado = false;
+                    posicionContacto = 0;
+                    total = contactosRegistrados;
+
+                    for (int i = 0; i < total; i++) {
+                        String[] partes = listaContactos[i].split(" ");
+
+                        if (partes[0].equalsIgnoreCase(nombreContacto)) {
+                            posicionContacto = i;
+                            contactoEncontrado = true;
+                            break;
+                        } else {
+                            contactoEncontrado = false;
+
+                        }
+                    }
+
+                    if (contactoEncontrado) {
+                        System.out.println("\nContacto Encontrado. Contacto Eliminado!!");
+                        listaContactos[posicionContacto] = null;
+                        contactosRegistrados -= 1;
+
+                    } else {
+                        System.out.println("\nContacto NO Encontrado!!");
+                    }
+
+                    System.out.println();
+                    break;
+                // Salir del Sistema
+                case 6:
+                    System.out.println("\n\nGracias por usar el Sistema de Gestion de Contactos!!");
+                    break;
+                default:
+                    System.out.println("\nOpcion no valida.\n");
                     break;
 
             }

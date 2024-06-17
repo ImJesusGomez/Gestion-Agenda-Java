@@ -84,15 +84,48 @@ public class ArreglosProyecto {
                     }
 
                     if (contactoEncontrado) {
-                        System.out.println("Contacto Encontrado");
+                        System.out.println("\nContacto Encontrado!!");
                         System.out.println("Nombre: " + nombre + "\nTelefono: " + numero);
                     } else {
-                        System.out.println("Contacto NO Encontrado");
+                        System.out.println("\nContacto NO Encontrado!!");
                     }
 
                     System.out.println();
 
                     break;
+                // Editar contacto
+                case 4:
+                    System.out.println("Introduce el nombre: ");
+                    nombreContacto = teclado.readLine();
+                    contactoEncontrado = false;
+                    int posicionContacto = 0;
+                    total = contactosRegistrados;
+                    
+                    for (int i = 0; i < total; i++) {
+                        String[] partes = listaContactos[i].split(" ");
+
+                        if (partes[0].equalsIgnoreCase(nombreContacto)) {
+                            posicionContacto = i;
+                            contactoEncontrado = true;
+                            break;
+                        } else {
+                            contactoEncontrado = false;
+
+                        }
+                    }
+
+                    if (contactoEncontrado) {
+                        System.out.println("\nContacto Encontrado!!");
+                        System.out.println("Ingresa los nuevos datos: ");
+                        listaContactos[posicionContacto] = teclado.readLine();
+                    } else {
+                        System.out.println("\nContacto NO Encontrado!!");
+                    }
+
+                    System.out.println();
+
+                    break;
+
             }
         }
     }
